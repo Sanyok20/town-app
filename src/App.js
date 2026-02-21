@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import InfoAboutTown from "./components/Info_about_town";
+import FamousSight from "./components/The_most_famous_sight";
+import OtherSights from "./components/Other_sights";
+import TownPhotos from "./components/Town_photos";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+
+      <nav>
+        <a href="/">Місто</a> |{" "}
+        <a href="/famous">Головна памʼятка</a> |{" "}
+        <a href="/other">Інші памʼятки</a> |{" "}
+        <a href="/photos">Фото</a>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<InfoAboutTown />} />
+        <Route path="/famous" element={<FamousSight />} />
+        <Route path="/other" element={<OtherSights />} />
+        <Route path="/photos" element={<TownPhotos />} />
+      </Routes>
+
+    </BrowserRouter>
   );
 }
 
