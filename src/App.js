@@ -1,19 +1,18 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import InfoAboutTown from "./components/Info_about_town";
 import FamousSight from "./components/The_most_famous_sight";
 import OtherSights from "./components/Other_sights";
 import TownPhotos from "./components/Town_photos";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   return (
     <BrowserRouter>
-
       <nav>
-        <a href="/">Місто</a> |{" "}
-        <a href="/famous">Головна памʼятка</a> |{" "}
-        <a href="/other">Інші памʼятки</a> |{" "}
-        <a href="/photos">Фото</a>
+        <Link to="/">Місто</Link> |{" "}
+        <Link to="/famous">Головна памʼятка</Link> |{" "}
+        <Link to="/other">Інші памʼятки</Link> |{" "}
+        <Link to="/photos">Фото</Link>
       </nav>
 
       <Routes>
@@ -23,7 +22,7 @@ function App() {
         <Route path="/photos" element={<TownPhotos />} />
       </Routes>
 
-    </BrowserRouter>
+    </BrowserRouter >
   );
 }
 
