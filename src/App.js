@@ -3,6 +3,7 @@ import InfoAboutTown from "./components/Info_about_town";
 import FamousSight from "./components/The_most_famous_sight";
 import OtherSights from "./components/Other_sights";
 import TownPhotos from "./components/Town_photos";
+import TownForm from "./components/TownForm";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Link to="/famous">Головна памʼятка</Link> |{" "}
         <Link to="/other">Інші памʼятки</Link> |{" "}
         <Link to="/photos">Фото</Link>
+        <Link to="/form">Форма</Link>
       </nav>
 
       <Routes>
@@ -20,6 +22,7 @@ function App() {
         <Route path="/famous" element={<FamousSight />} />
         <Route path="/other" element={<OtherSights />} />
         <Route path="/photos" element={<TownPhotos />} />
+        <Route path="/form" element={<TownForm />} />
       </Routes>
 
     </BrowserRouter >
